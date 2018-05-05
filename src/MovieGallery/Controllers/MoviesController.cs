@@ -7,11 +7,7 @@ namespace MovieGallery.Controllers
     {
         public ActionResult Detail()
         {
-            if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
-            {
-                return Redirect("/");
-            }
-            return Content("Hello world.");
+            return View();
         }
     }
 }
