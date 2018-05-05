@@ -1,12 +1,17 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 
 namespace MovieGallery.Controllers
 {
     public class MoviesController : Controller
     {
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "Hello world.";
+            if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
+            {
+                return Redirect("/");
+            }
+            return Content("Hello world.");
         }
     }
 }
