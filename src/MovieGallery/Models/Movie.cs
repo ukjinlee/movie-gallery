@@ -15,5 +15,13 @@ namespace MovieGallery.Models
         public string Writer { get; set; }
         public string Studio { get; set; }
         public bool Favorite { get; set; }
+
+        public string CoverImageFileName
+        {
+            get
+            {
+                return Title.Replace(" ", " -").ToLower() + ".jpg";
+            }
+        }
     }
 }
