@@ -1,5 +1,14 @@
 ﻿@{
     Layout = null;
+    var seriesTitle = "Coco";
+    var description = "<p>Aspiring musician Miguel, confronted with his family's ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer.</p>";
+    var movieInfo = new string[]
+    {
+        "Genre: Action & Adventure, Animation, Comedy",
+        "Directed By: Lee Unkrich, Adrian Molina",
+        "Written By: Matthew Aldrich, Adrian Molina",
+        "Studio: Disney/Pixar"
+    };
 }
 
 <!DOCTYPE html>
@@ -11,7 +20,13 @@
 </head>
 <body>
     <div>
-        <h1>Hello from Detail view!</h1>
+        <h1>@seriesTitle</h1>
+
+        <h5>Description:</h5>
+        <div>@Html.Raw(description)</div>
+
+        <h5>Movie Info:</h5>
+        <div>@movieInfo</div>
     </div>
 </body>
 </html>
