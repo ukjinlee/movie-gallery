@@ -1,22 +1,16 @@
-﻿@{
+﻿@model MovieGallery.Models.Movie
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Movie Detail";
+    ViewBag.Title = Model.Title;
 }
 
-<h1>@ViewBag.SeriesTitle</h1>
+<h1>@Model.Title</h1>
 
 <h5>Description:</h5>
-<div>@Html.Raw(ViewBag.Description)</div>
+<div>@Html.Raw(Model.DescriptionHtml)</div>
 
-@if (ViewBag.MovieInfo.Length > 0)
-{
-    <h5>Movie Info:</h5>
-    <div>
-        <ul>
-            @foreach (var info in ViewBag.MovieInfo)
-            {
-                <li>@info</li>
-            }
-        </ul>
-    </div>
-}
+<h5>Genre: @Model.Genre</h5>
+<h5>Director: @Model.Director</h5>
+<h5>Writer: @Model.Writer</h5>
+<h5>Studio: @Model.Studio</h5>
