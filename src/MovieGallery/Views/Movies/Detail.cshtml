@@ -1,33 +1,22 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Movie Detail";
 }
 
-<!DOCTYPE html>
+<h1>@ViewBag.SeriesTitle</h1>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
+<h5>Description:</h5>
+<div>@Html.Raw(ViewBag.Description)</div>
+
+@if (ViewBag.MovieInfo.Length > 0)
+{
+    <h5>Movie Info:</h5>
     <div>
-        <h1>@ViewBag.SeriesTitle</h1>
-
-        <h5>Description:</h5>
-        <div>@Html.Raw(ViewBag.Description)</div>
-
-        @if (ViewBag.MovieInfo.Length > 0)
-        {
-            <h5>Movie Info:</h5>
-            <div>
-                <ul>
-                    @foreach (var info in ViewBag.MovieInfo)
-                    {
-                        <li>@info</li>
-                    }
-                </ul>
-            </div>
-        }
+        <ul>
+            @foreach (var info in ViewBag.MovieInfo)
+            {
+                <li>@info</li>
+            }
+        </ul>
     </div>
-</body>
-</html>
+}
