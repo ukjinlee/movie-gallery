@@ -5,12 +5,22 @@
     ViewBag.Title = Model.Title;
 }
 
-<h1>@Model.Title</h1>
+<h2>@Model.Title</h2>
 
-<h5>Description:</h5>
-<div>@Html.Raw(Model.DescriptionHtml)</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="well">
+            <h5><label>Genre:</label> @Model.Genre</h5>
+            <h5><label>Director:</label> @Model.Director</h5>
+            <h5><label>Writer:</label> @Model.Writer</h5>
+            <h5><label>Studio:</label> @Model.Studio</h5>
 
-<h5>Genre: @Model.Genre</h5>
-<h5>Director: @Model.Director</h5>
-<h5>Writer: @Model.Writer</h5>
-<h5>Studio: @Model.Studio</h5>
+        </div>
+        <h5>Description</h5>
+        <div>@Html.Raw(Model.DescriptionHtml)</div>
+    </div>
+    <div class="col-md-6">
+        <img src="/Images/@Model.CoverImageFileName"
+             alt="@Model.CoverImageFileName" class="img-responsive" />
+    </div>
+</div>
