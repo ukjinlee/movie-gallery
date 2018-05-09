@@ -9,7 +9,7 @@ namespace MovieGallery.Data
         {
             new Movie()
             {
-                Id = 0,
+                Id = 1,
                 Title = "Coco",
                 DescriptionHtml = "<p>Aspiring musician Miguel, confronted with his family's ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer.</p>",
                 Genre = "Action & Adventure, Animation, Comedy",
@@ -19,7 +19,7 @@ namespace MovieGallery.Data
             },
             new Movie()
             {
-                Id = 1,
+                Id = 2,
                 Title = "Dunkirk",
                 DescriptionHtml = "<p>Allied soldiers from Belgium, the British Empire and France are surrounded by the German Army, and evacuated during a fierce battle in World War II.</p>",
                 Genre = "Action & Adventure, Drama",
@@ -29,7 +29,7 @@ namespace MovieGallery.Data
             },
             new Movie()
             {
-                Id = 2,
+                Id = 3,
                 Title = "Zootopia",
                 DescriptionHtml = "<p>In a city of anthropomorphic animals, a rookie bunny cop and a cynical con artist fox must work together to uncover a conspiracy.</p>",
                 Genre = "Action & Adventure, Animation, Comedy",

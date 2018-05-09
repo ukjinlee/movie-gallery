@@ -1,21 +1,25 @@
-﻿using MovieGallery.Models;
+﻿using MovieGallery.Data;
+using MovieGallery.Models;
 using System.Web.Mvc;
 
 namespace MovieGallery.Controllers
 {
     public class MoviesController : Controller
     {
-        public ActionResult Detail()
+        private MovieRepository _movieRepository = new MovieRepository();
+
+        public ActionResult Detail(int? id)
         {
-            var movie = new Movie()
+            if (id == null)
             {
-                Title = "Coco",
-                DescriptionHtml = "<p>Aspiring musician Miguel, confronted with his family's ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer.</p>",
-                Genre = "Action & Adventure, Animation, Comedy",
-                Director = "Lee Unkrich, Adrian Molina",
-                Writer = "Matthew Aldrich, Adrian Molina",
-                Studio = "Disney/Pixar"
-            };
+                return HttpNotFound();
+            }
+
+            var movie = _movieRepository.GetMovie(id.Value);
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
 
             return View(movie);
         }
