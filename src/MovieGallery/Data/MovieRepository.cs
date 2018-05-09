@@ -37,7 +37,12 @@ namespace MovieGallery.Data
                 Writer = "Jared Bush, Phil Johnston",
                 Studio = "Walt Disney Animation Studios"
             }
-    };
+        };
+
+        public Movie[] GetMovies()
+        {
+            return _movies.ToArray();
+        }
 
         public Movie GetMovie(int id)
         {

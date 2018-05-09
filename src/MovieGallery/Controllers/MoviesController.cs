@@ -8,6 +8,11 @@ namespace MovieGallery.Controllers
     {
         private MovieRepository _movieRepository = new MovieRepository();
 
+        public ActionResult Index()
+        {
+            return View(_movieRepository.GetMovies());
+        }
+
         public ActionResult Detail(int? id)
         {
             if (id == null)
